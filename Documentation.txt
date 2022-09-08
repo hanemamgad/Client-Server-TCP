@@ -1,0 +1,31 @@
+Client - Server TCP Socket Programming
+
+Github Repo link https://github.com/hanemamgad/Client-Server-TCP
+
+1- Connection choice:
+	- TCP was chosen so a connection can be established between node in forrest (Server) and client, to prevent loss of data as TCP is more reliable.
+	- TCP is an connection based protocol and is reliable.
+2- Architecture Design
+	- Basic Client-Server design was used, the server send the data to client, and client calculates data and print them.
+	- Client and Server both connect to the same port, with the same local IP-Address.
+	- Client and Server classes connect over Socket Programming through the same port.
+	2.1- Server
+		- When the server runs, it binds to a specific port and waits(listens) to client, until client connects.
+		- When a client connects, the server starts sending the client temperature readings every 1 second.
+		- Once the client is connected to server, it doesn't allow other client to connect.
+		- After the server is done sending temperature grades, it will send "Exit" to the client to close connection with this specific client and listens again for another client.
+	2.2- Client
+		- When a client is established, it tires to connect to the server.
+		- Once the client is connected, it starts receiving temperature grades from server, and calculating the average over time and accumulation over time.
+		- The client then prints the average and accumulation over time every 5 seconds.
+		- The client closes connection with server (closes client socket) once it receives "Exit" message from the server.
+3- Visual Studio Project was used which includes *.vcxproj and *.sln which are both building system scripts and configuration files.
+4- Git was used with Visual Studion to keep track of changes and versions over time and code pushed to github.
+5- Unit Tests were done for some of the functions of both classes included in UnitTest1 Project.
+6- Implementation
+	- Each of Client and Server were implemented in different Projects.
+	- Header files were used to declare the classes and class functions.
+	- CPP files were used to define the classes and functions and functionality and to allow easier use and reuse of code in the future and to make use of encapsulation.
+	- Objects of Client and Server are used to implement the functionalities for Client and Server.
+	- getters functions for private class variables.
+	- Encapsulation allows for expantion in the future and the ease of editing of the code.
