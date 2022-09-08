@@ -92,6 +92,17 @@ void Client::calc_accum_over_time(float degree) {
 	accum_over_time = accum_over_time + degree;
 
 }
+vector<float> Client::getTemps() {
+	return temps;
+}
+float Client::get_agv() {
+	return avg_over_time;
+}
+float Client::get_accum() { return accum_over_time; }
+string Client::get_ipAdress() { return ip_address; }
+int Client::get_port() {
+	return port;
+}
 
 int main() {
 	Client client = Client("127.0.0.1", 8080);

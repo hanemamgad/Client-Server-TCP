@@ -14,16 +14,22 @@ private:
 	int port;
 
 	SOCKET createClientSocket();
-	vector<float> temps;
+	
 	float avg_over_time;
 	float accum_over_time;
 
 public:
+	vector<float> temps;
 
 	Client(string ip_address, int port);
 	~Client();
 
 	bool Init();
+	vector<float> getTemps();
+	float get_agv();
+	float get_accum();
+	string get_ipAdress();
+	int get_port();
 
 	void run();
 	void cleanup();

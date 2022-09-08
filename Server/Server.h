@@ -29,6 +29,8 @@ private:
 
 public:
     vector<float> temperatures;
+    string get_ipAdress();
+    int get_port();
     Server(string ipAdress, int port);
     ~Server();
 

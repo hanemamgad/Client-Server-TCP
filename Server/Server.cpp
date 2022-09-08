@@ -105,6 +105,11 @@ SOCKET Server::createSocket() {
     }
 }
 
+string Server::get_ipAdress() { return server_ip_address; }
+int Server::get_port() {
+    return server_port;
+}
+
 //wait for connection
 SOCKET Server::waitForConnection(SOCKET listening)
 {
